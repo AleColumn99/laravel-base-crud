@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  height: 120px;
+  .logo {
+    float: left;
+    width: 10%;
+    height: 120px;
+    img {
+      height: 80px;
+      margin-top: 20px;
+    }
+  }
+  .menu {
+    float: right;
+    text-align: right;
+    width: 50%;
+    height: 120px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    height: 100%;
+    list-style-type: none;
+    line-height: 120px;
+    li {
+      /* margin-left: 20px; */
+      align-items: center;
+      .active {
+        color: $brand-color;
+        border-bottom: 2px solid $brand-color;
+      }
+    }
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
