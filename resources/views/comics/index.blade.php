@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container">
-    <h1>titolo</h1>
+    <h1>FUMETTI</h1>
     <section class="container">
         <table class="table">
             <thead>
@@ -20,10 +20,22 @@
                         <td>{{ $comic->title }}</td>
                         <td>{{ $comic->type }}</td>
                         <td>
-                            <a href="{{ route('comics.show', $comic) }}" class="btn btn-success">SHOW</a>
+                            <a href="{{ route('comics.show', $comic) }}" class="btn btn-success">
+                              SHOW
+                            </a>
                         </td>
-                        <td>EDIT</td>
-                        <td>DELETE</td>
+                        <td>
+                            <a href="{{ route('comics.edit', $comic) }}" class="btn btn-success">
+                              EDIT
+                            </a>
+                        </td>
+                        <td>
+                          <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">DELETE</button>
+                          </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
